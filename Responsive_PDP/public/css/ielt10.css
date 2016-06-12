@@ -1,0 +1,77 @@
+.bg-1 {
+  background-image: url(../images/carousel-1.jpg); }
+
+.bg-2 {
+  background-image: url(../images/carousel-2.jpg); }
+
+.bg-3 {
+  background-image: url(../images/carousel-3.jpg); }
+
+.bg-4 {
+  background-image: url(../images/carousel-4.jpg); }
+
+body {
+  text-align: center; }
+
+.wrapper {
+  width: expression(document.body.clientWidth > 1299 ? "1300px" : "auto" ); }
+
+.carousel-container .container {
+  width: expression(document.body.clientWidth > 933 ? "932px" : "auto" );
+  text-align: left; }
+
+.top-menu {
+  right: 0;
+  top: 0; }
+
+.carousel-container .carousel li,
+.top-menu, .top-menu li,
+.bottom-carousel img.left,
+.bottom-carousel img.right,
+.carousel-container .carousel li .button,
+.carousel-container .carousel li .button a {
+  display: -moz-inline-stack;
+  zoom: 1;
+  *display: inline; }
+
+.carousel-container .carousel li .button {
+  margin-left: -78.5px; }
+
+.carousel-container .carousel li .text {
+  width: 100%;
+  left: 0; }
+
+.bottom-carousel .control-squares li {
+  cursor: hand; }
+
+.companies-logos li {
+  margin: 0 1%;
+  opacity: 1; }
+
+.meet-us .pm {
+  border-radius: 40px;
+  behavior: url(../../css3pie/PIE.htc);
+  height: 60px;
+  padding-top: 20px; }
+
+.testimonials h2 + p + p {
+  display: none; }
+
+.top-menu.rotation {
+  right: 0; }
+
+.testimonials .author img {
+  left: 0; }
+
+.testimonials .author p {
+  padding-left: 0; }
+
+@media screen and (max-width: 800px) {
+  .top-menu {
+    right: -100%;
+    background-color: #5AC7DA; } }
+@media screen and (max-width: 670px) {
+  .contacts {
+    background-image: url(../images/contacts_small.png); } }
+
+/*# sourceMappingURL=ielt10.css.map */
