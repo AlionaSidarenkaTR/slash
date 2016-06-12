@@ -1,0 +1,16 @@
+<div class="main-container">
+	<div class="lists-block">
+		<div class="user-block">
+			<div class="for-email">
+				<span class="first-letter">{{user.email.slice(0,1).toUpperCase()}}</span>
+				<span class="email">{{user.email}}</span>
+			</div>
+			<div ng-click="session.logout()" class="btn logout">Logout</div>
+		</div>
+		<div class="lists-scroll" id="lists-scroll" ng-include="'views/partials/lists.html'"></div>
+		<div ng-click="showPopup($event, 'create')" class="btn btn-primary create"><span>Create new List</span></div>
+	</div>
+	<div class="tasks-block" ui-view></div>
+	<div ng-show="popupShown" ng-include="'views/partials/popup.html'" class="animate-show popup-wrap" ng-click="showPopup($event)"></div>
+</div>
+

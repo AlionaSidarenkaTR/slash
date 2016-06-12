@@ -1,0 +1,33 @@
+{
+  "name": "wunderlist2",
+  "version": "1.0.0",
+  "description": "",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Aliona Kastsevich",
+  "license": "ISC",
+  "dependencies": {
+    "async": "^1.5.0",
+    "bcrypt-nodejs": "0.0.3",
+    "body-parser": "latest",
+    "connect-flash": "^0.1.1",
+    "connect-mongo": "^0.8.2",
+    "cookie-parser": "latest",
+    "ejs": "latest",
+    "express": "^4.13.3",
+    "express-session": "latest",
+    "jade": "^1.11.0",
+    "mongoose": "latest",
+    "morgan": "^1.6.1",
+    "multer": "^1.1.0",
+    "openid": "^1.0.0",
+    "passport": "^0.3.0",
+    "passport-facebook": "^2.0.0",
+    "passport-google": "^0.3.0",
+    "passport-local": "^1.0.0",
+    "passport-openid": "^0.4.0",
+    "socket.io": "^1.3.7"
+  }
+}

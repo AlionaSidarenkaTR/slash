@@ -1,0 +1,23 @@
+<div class="task-main">
+	<div class="task-common">
+	
+		<h1 class="list-title">{{profileController.listToShowTasks.name}}</h1>
+	</div>
+	<div class="tasks-scroll">
+		<div class="create-task">
+			<input type="text" id="add-task" ng-model="name" maxlength="250" placeholder="Create a task...">
+		</div>
+		
+		<ul class="tasks">
+			<li ng-repeat="task in tasks track by $index" ng-class='{completed: task.completed}' ui-sref="taskModify({taskId: task._id, taskObject: task})" ui-sref-active="active" ng-click="showModifyWindow(task)">
+				<div class="task-name">{{task.name}}</div>
+				<div class="complete-bar"></div>
+				<div class="task-actions">
+					<div class="completeTask"ng-click="completeTask($event,task)"></div>
+					<div ng-click="taskController.deleteTask($event, task)" class="fa fa-trash-o deletetask"></div>
+				</div>
+			</li>
+		</ul>
+	</div>
+</div>
+<div ui-view></div>

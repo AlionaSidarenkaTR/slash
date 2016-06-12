@@ -1,0 +1,49 @@
+<div class="task-modify">
+	<div class="forTaskModify">
+		<div class="header">
+			<input type="text" maxlength="50" value="{{taskController.editingTask.name}}" ng-model="draft.name" placeholder="Task name..." ng-blur="updateTaskName(draft.name)">
+			
+		</div>
+		<div class="task-modify-body">
+			<input type="text" maxlength="50" placeholder="Add a subtask..." ng-model="data.temporarySubtask" ng-keydown="addToSubtasks($event, data.temporarySubtask)" ng-disabled="draft.disabled || taskController.editingTask.completed">
+			<ul>
+				<li ng-repeat="subtask in draft.subtasks track by $index" class="original">
+					<div class="subtask-name">{{subtask.name}}</div>
+					<div class="modify">
+						<span class="deleteSubtask fa fa-times" ng-click="deleteSubtask(subtask)"></span>
+						<span class="completeSubtask fa fa-check" ng-class='{completedSubtask: subtask.completed}' ng-click="!subtask.completed && completeSubtask(subtask)"></span>
+					</div>
+				</li>
+			</ul>
+			<textarea ng-model="taskController.editingTask.description" maxlength="500" placeholder="Description..." class="description" ng-blur="updateDescription(taskController.editingTask.description)">{{taskController.editingTask.description}}</textarea>
+			<ul class="task-modify-images">
+				<li ng-repeat="img in draft.images track by $index">
+					<img ng-src='{{"./../img/public/" + img}}' alt="">
+				</li>
+			</ul>
+			<div ngf-drop ngf-select ng-model="files" class="drop-box" 
+			        ngf-drag-over-class="'dragover'" ngf-multiple="true" ngf-allow-dir="true"
+			        accept="image/*,application/pdf" 
+			        ngf-pattern="'image/*,application/pdf'">Drop pdfs or images here or click to upload
+			</div>
+		    <div ngf-no-file-drop>File Drag/Drop is not supported for this browser</div>
+		</div>
+		<div class="task-modify-bottom">
+			<button ng-click="closeModifyWindow()" class="btn btn-primary cancel">Close</button>
+			<button ng-click="deleteTask($event)" class="btn btn-danger">Delete</button>
+			<span class="fa fa-weixin chat-icon" ng-click="showChat()"></span>
+			<div class="chat-window-wrap">
+				<div class="chat-header"><span class="hide-chat fa fa-angle-right" ng-click="hideChat()"></span>{{taskController.editingTask.name}} </div>
+				<ul class="chat-body">
+					<li ng-repeat="message in draft.messages">
+						<div class="author-name">{{message.author}}</div>
+						<div class="chat-message">{{message.message}}</div>
+					</li>
+				</ul>
+				<div class="chat-footer">
+					<input type="text" placeholder="Type smth here..." class="chat-input" ng-model="data.newMessage" ng-keydown="addToMessages($event, data.newMessage)">
+				</div>
+			</div>	
+		</div>
+	</div>
+</div>

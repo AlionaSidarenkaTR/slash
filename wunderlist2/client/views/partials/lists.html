@@ -1,0 +1,25 @@
+<ul class="pending_approval">
+	<li ng-repeat="pending_invite in pending_invites track by $index">
+		<div class="first-letter-pending">{{pending_invite.invitor_email.slice(0,1).toUpperCase()}}</div>
+		<div class="invite-text">
+			<div class="title">{{pending_invite.name}}</div>
+			<div class="invitor">invitor - {{pending_invite.invitor_email}}</div>
+		</div>
+		<div class="invite-buttons">
+			<div ng-click="toApprove(pending_invite._id, pending_invite.owner_id)" class="fa fa-check approve"></div>
+			<div ng-click="decline(pending_invite._id)" class="fa fa-times decline"></div>
+		</div>
+	</li>
+</ul>
+<ul class="lists">
+	<li ng-repeat="list in lists track by $index" ui-sref="listsTasks({id: list._id})" ui-sref-active="active" ng-click="setList(list)">
+		<div class="list-icon fa fa-list">
+		</div>
+		<a class="list-item-name" >{{list.name}}
+		</a>
+		<div class="modify">
+			<span ng-click="showPopup($event, 'edit', list)" class="fa fa-pencil"></span>
+			<span ng-show="user._id === list.owner_id" ng-click="deleteList(list)" class="fa fa-trash-o"></span>
+		</div>
+	</li>
+</ul>
