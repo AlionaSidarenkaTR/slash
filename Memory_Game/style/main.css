@@ -1,0 +1,307 @@
+@font-face{
+	font-family:'Gotham';
+	src: url('../fonts/gotham-book-1361523257.ttf')
+}
+
+html, body {
+	height: 100%;
+}
+
+body {
+	margin: 0;
+	background: url('../images/backgroundretro.jpg');
+	background-size: cover;
+}
+
+header {
+	padding: 10px;
+	background-color: black;
+	color: white;
+	position: relative;
+	min-width: 335px;
+}
+
+aside {
+    float: left;
+    width: 100px;
+    text-align: center;
+    vertical-align: top;
+	display: inline-block;
+	font: bold 20px 'Gotham';
+	color: rgba(0, 0, 0, 0.75);
+}
+
+main {
+	margin-left: 100px;
+    text-align: center;
+}
+
+/*LOGO BLOCK*/
+/*************************************************************/
+.logo {
+	display: inline-block;
+	background: url('../images/logo.png') no-repeat;
+	height: 84px;
+	width: 84px;
+	cursor: pointer;
+	-webkit-animation: rotating 10s linear infinite;
+}
+
+i.fa-volume-up, i.fa-volume-off {
+	top: 50%;
+    position: absolute;
+    margin-top: -6px;
+    margin-left: 10px;
+    cursor: pointer;
+}
+
+@-webkit-keyframes rotating {
+    from{
+        -webkit-transform: rotate(0deg);
+    }
+    to{
+        -webkit-transform: rotate(360deg);
+    }
+}
+
+.logo-text {
+	display: inline-block;
+	background: url('../images/logo-text.png') no-repeat;
+	height: 84px;
+	width: 226px;
+	cursor: pointer;
+	margin-left: 10px;
+}
+
+ul {
+	margin: 0;
+	padding: 0;
+	list-style: none;
+	text-align: left;
+	font: 15px Gotham;
+	color: white;
+}
+
+.game-container {
+    padding: 5px 5px 0 0;
+    border-radius: 5px;
+    margin: 10px;
+	display: inline-block;
+	box-sizing: border-box;
+    background-color: rgba(0,0,0,.5);
+    animation: increase 1s ease;
+    transition: all 1s ease 1s;
+}
+
+.popup {
+	transform: scale(0);
+	transition: all 2s ease;
+}
+.increase {
+	animation: increase 1s ease;
+}
+@keyframes increase {
+	0% {
+		transform: scale(0.1);
+	},
+	50% {
+		transform: scale(1);
+	}
+}
+
+.game-container li {
+	width: 95px;
+	height: 132px;
+	display: inline-block;
+	cursor: pointer;
+	margin-left: 5px;
+	position: relative;
+	-webkit-transition: all .4s linear;
+	transition: all .4s linear;
+	-webkit-transform-style: preserve-3d;
+	transform-style: preserve-3d;
+}
+
+.game-container .face {
+	height: 100%;
+	width: 100%;
+	position: absolute;
+	top: 0;
+	left: 0;
+	-webkit-backface-visibility: hidden;
+  	backface-visibility: hidden;
+}
+
+.game-container .face.front {
+	background: url('../images/front.jpg');
+	z-index: 2;
+}
+
+.game-container .face.back {
+	z-index: 1;
+	-webkit-transform: rotateY(180deg);
+	transform: rotateY(180deg);
+	background-size: contain;
+    background-repeat: no-repeat;
+    background-position-y: 50%;
+    border: 1px solid #ccc;
+    border-radius: 2px;
+    box-sizing: border-box;
+    background-color: antiquewhite;
+}
+
+.rotate {
+	-webkit-transform: rotateY(180deg);
+	transform: rotateY(180deg);
+}
+
+.disappear {
+	-webkit-transform: scaleX(0.5) rotateX(90deg);
+	transform: scaleX(0.5) rotateX(90deg);
+}
+
+.score::before {
+	content: attr(data-score);
+}
+
+.time::before {
+	content: attr(data-time);
+}
+
+.stage::before {
+	content: attr(data-stage);
+}
+
+.timebonus::before {
+	content: attr(data-timebonus);
+}
+
+.popup-wrapper {
+	position: fixed;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    background-color: rgba(0,0,0,0.5);
+    display: none;
+    -webkit-transform-style: preserve-3d;
+	transform-style: preserve-3d;
+}
+
+.popup {
+	-webkit-box-shadow: 0px 0px 15px 0px rgba(0, 0, 0, 0.75);
+	-moz-box-shadow:    0px 0px 15px 0px rgba(0, 0, 0, 0.75);
+	box-shadow:         0px 0px 15px 0px rgba(0, 0, 0, 0.75);
+	border-radius: 5px;
+	width: 300px;
+    margin-top: 10px;
+    padding: 25px;
+    background-color: #303E43;
+	position: absolute;
+    top: 50%;
+    left: 50%;
+    text-align: center;
+    transform: scale(1) translate3D(-50%, -50%, 0);
+}
+
+.popup-text {
+	font: 17px Gotham;
+    line-height: 30px;
+    color: wheat;
+}
+
+.no-smooth-text {
+	-webkit-font-smoothing: antialiased;
+}
+
+.button{
+	display: block;
+	cursor: pointer;
+	width: 300px;
+	height: 60px;
+	line-height: 57px;
+	margin: 20px auto 0;
+	border: none;
+	text-transform: uppercase;
+	font: 41px Gotham;
+	outline: none;
+	color: wheat;
+	background-color: #fb6362;
+	border-radius: 2px;
+	border-bottom: 1px solid #6a5656;
+	-webkit-box-shadow:0 6px 4px -4px rgba(0, 0, 0, .2);
+	-moz-box-shadow: 0 6px 4px -4px rgba(0, 0, 0, .2);
+	box-shadow: 0 6px 4px -4px rgba(0, 0, 0, .2);
+	-webkit-transition: background-color 0.5s ease;
+	-o-transition: background-color 0.5s ease;
+	transition: background-color 0.5s ease;
+}
+.button:hover{
+	background-color: #c35958;
+}
+
+.restart.button, .pause.button {
+	font-size: 14px;
+    margin: 10px;
+    display: inline-block;
+    height: 30px;
+    width: 77px;
+}
+
+aside div:nth-child(2n) {
+	margin-bottom: 10px;
+}
+
+.display {
+	display: block;
+}
+.decrease-popup {
+	transition: all 1s ease;
+	transform: scale(0) translate3D(50%, 50%, 0);
+}
+
+.decrease {
+	transform: scale(0);
+}
+
+input[type="text"]{
+	vertical-align: middle;
+	outline: none;
+	height: 38px;
+	border: none;
+    width: 267px;
+	padding:0;
+	font-size: 25px;
+	background-color: transparent;
+	font: 14px Gotham;
+	color: #999898;
+}
+
+.for-input {
+	height: 38px;
+	padding: 3px 3px 3px 12px;
+	width: 280px;
+	margin: 0 auto;
+	-webkit-box-shadow: inset 0px 1px 1px 1px rgba(204,204,204,1);
+	-moz-box-shadow: inset 0px 1px 1px 1px rgba(204,204,204,1);
+	box-shadow: inset 0px 1px 1px 1px rgba(204,204,204,1);
+	border-radius: 2px;
+	background-color: #f4f4f4;
+}
+
+.for-input + .button {
+	font-size: 15px;
+}
+
+.name-final-table {
+	display: inline-block;
+	width: 137px;
+	text-overflow: ellipsis;
+	white-space: nowrap;
+    overflow: hidden;
+    vertical-align: bottom;
+    margin: 0px 10px;
+}
+
+.final li {
+	margin: 5px 0;
+}
