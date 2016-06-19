@@ -1,0 +1,16 @@
+extends layout
+
+block content
+  script(type="text/javascript").
+    if (window.opener) {
+      window.opener.focus();
+      auth('#{state}', !{JSON.stringify(user)});
+    }
+    window.close();
+    function auth(state, user) {
+        if (state = 'success') {
+            window.opener.location.href = "localhost:3000/articles";
+        } else {
+            window.opener.location.href = "localhost:3000/";
+        }
+    }

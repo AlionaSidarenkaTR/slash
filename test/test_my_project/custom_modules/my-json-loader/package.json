@@ -1,0 +1,9 @@
+{
+  "name": "my-json-loader",
+  "version": "0.5.4",
+  "author": {
+    "name": "Aliona"
+  },
+  "description": "json loader module for webpack",
+  "license": "MIT"
+}

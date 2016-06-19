@@ -1,0 +1,35 @@
+<div class='container'>
+	<div class='col-sm-6 col-sm-offset-3'>
+		<h1>
+			<span class='fa fa-sign-in'>{{::auth.action}}</span>
+		</h1>
+		<form class='form-signin' ng-submit='auth.sendFormData($event, {email: email, password: password})' novalidate name="authForm">
+			<div>{{::auth.message}}</div>
+			<div class='form-group'>
+				<label>Email</label>
+				<input class='input-block-level form-control'
+						type='text'
+						name='email'
+						placeholder='email'
+						ng-model='email'
+						required/>
+			</div>
+			<div class='form-group'>
+				<label>Password</label>
+				<input class='input-block-level form-control'
+						type='password'
+						name='password'
+						placeholder='password'
+						ng-model='password'
+						required/>
+			</div>
+			<button class='btn btn-warning btn-lg'
+					ng-disabled='authForm.$dirty && authForm.$invalid || authForm.$pristine'
+					type='submit'>{{::auth.action | uppercase}}</button>
+		</form>
+		<p ng-show="auth.action==='login'">Need an account? <a ui-sref="SIGNUP">Signup</a></p>
+		<p ng-show="auth.action==='signup'">Already have an account? <a ui-sref="LOGIN">Login</a></p>
+		<p><a ui-sref='HOME'>Home</a></p>
+		<hr/>
+	</div>
+</div>

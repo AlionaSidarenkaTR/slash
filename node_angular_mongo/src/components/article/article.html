@@ -1,0 +1,10 @@
+<div class="container">
+	<div class="text-center article">
+		<h1>{{::articleCtrl.article.title}}</h1>
+		<span>author: {{::articleCtrl.article.author}}</span>
+		<p>{{::articleCtrl.article.text}}</p>
+		<p ng-show="articleCtrl.article.image">
+			<img ng-src='{{"../public/uploads/" + articleCtrl.article.image}}'></img>
+		</p>
+	</div>
+</div>

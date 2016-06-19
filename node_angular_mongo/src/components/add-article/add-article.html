@@ -1,0 +1,51 @@
+<div class="container">
+	<button class="btn btn-primary"
+		ng-click="addArticleCtrl.goBack()">Back</button>
+	<div class="col-sm-6 col-sm-offset-3">
+	<h1>
+		<span class="fa fa-sign-in">NEW ARTICLE</span>
+	</h1>
+
+	<form name="newArticleForm"
+		enctype="multipart/form-data"
+		class="form-signin"
+		ng-submit="addArticleCtrl.addNewArticle($event)">
+
+		<div class="form-group">
+			<label>Title</label>
+			<input type="text"
+				name="title"
+				placeholder="title"
+				required
+				ng-model="title"
+				class="input-block-level form-control"/>
+		</div>
+		<div class="form-group">
+			<label>File</label>
+			<input type="file"
+				name="file"
+				placeholder="file"
+				class="input-block-level form-control"/>
+		</div>
+		<div class="form-group">
+			<label>Content</label>
+			<textarea name="textarea"
+				required
+				ng-model="content"
+				class="textarea form-control"></textarea>
+		</div>
+		<div class="form-group">
+			<label>Author</label>
+			<input type="text"
+				name="author"
+				required
+				ng-model="author"
+				placeholder="author"
+				class="input-block-level form-control"/>
+		</div>
+		<button type="submit"
+			ng-disabled="newArticleForm.$dirty && newArticleForm.$invalid || newArticleForm.$pristine"
+			class="btn btn-warning btn-lg">ADD ARTICLE</button>
+
+	</form>
+</div>

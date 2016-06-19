@@ -1,0 +1,9 @@
+extends layout
+
+block content
+  script(type="text/javascript").
+    if (window.opener) {
+      window.opener.focus();
+      window.opener.app.authState('#{state}', !{JSON.stringify(user)});
+    }
+    window.close();

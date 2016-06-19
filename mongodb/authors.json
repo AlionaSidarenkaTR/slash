@@ -1,0 +1,36 @@
+[{
+    "name" : "Aliona Kastsevich",
+    "age" : 28,
+    "gender" : "female",
+    "email" : "stsabrina@yandex.ru",
+    "password" : "akfkdlsjfkjioeaiufioaeoifioduasoifuio",
+    "created_at" : "22/05/2016"
+}, {
+	"name": "Ivan Poluyan",
+	"age": 28,
+	"gender": "male",
+	"email": "ivan_poluyan@yandex.ru",
+	"password": "sadasdfsdavcdsvsdavcdv",
+	"created_at": "14/02/2013"
+}, {
+	"name": "Aliaksei Kalugin",
+	"age": 36,
+	"gender": "male",
+	"email": "aliaksei_kalugin@gmail.com",
+	"password": "ldklksldjfklsjkdlfjklsfj",
+	"created_at": "11/01/2010"
+}, {
+	"name": "Sviatlana Kireeva",
+	"age": 25,
+	"gender": "female",
+	"email": "sviatlana_kireeva@gmail.com",
+	"password": "ldklksldjfklsjkdlfjklsfj",
+	"created_at": "11/01/2010"
+}, {
+	"name": "Nikita Alejnikau",
+	"age": 17,
+	"gender": "male",
+	"email": "nikita_alejnikau@mail.ru",
+	"password": "lkl;kl;klll;lkl;",
+	"created_at": "12/01/2016"
+}]

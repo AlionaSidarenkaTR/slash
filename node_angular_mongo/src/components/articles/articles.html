@@ -1,0 +1,15 @@
+<div class="container">
+	<user-block></user-block>
+	<ul>
+		<li class="text-center article" ng-repeat="article in articles.articles track by $id(article)">
+			<h1>
+				<a ui-sref="ARTICLE({articleId: article._id})">{{::article.title}}</a>
+			</h1>
+			<span>author: {{::article.author}}</span>
+			<p >{{::article.text | limitTo: 10}}</p>
+			<p ng-show="article.image">
+				<img ng-src='{{"public/uploads/" + article.image}}'></img>
+			</p>
+		</li>
+	</ul>
+</div>

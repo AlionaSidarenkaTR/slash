@@ -1,0 +1,24 @@
+<div class='container'>
+	<ul class='jumbotron text-center'>
+		<li>
+			<a ui-sref='LOGIN' class='btn btn-default'>
+				<span class='fa fa-user'>Local Login</span>
+			</a>
+		</li>
+		<li>
+			<a ui-sref='SIGNUP' class='btn btn-default'>
+				<span class='fa fa-user'>Local Signup</span>
+			</a>
+		</li>
+		<li>
+			<a ng-click='preview.auth("facebook")' class='btn btn-primary'>
+				<span class='fa fa-facebook'>Facebook Login</span>
+			</a>
+		</li>
+		<li>
+			<a ng-click='preview.auth("google")' class='btn btn-danger'>
+				<span class='fa fa-google-plus'>Google Login</span>
+			</a>
+		</li>
+	</ul>
+</div>

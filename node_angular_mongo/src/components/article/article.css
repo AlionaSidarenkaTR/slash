@@ -1,0 +1,13 @@
+.container {
+	max-width: 900px;
+}
+
+.article p {
+	margin-top: 10px;
+	font-size: 18px;
+}
+
+.article img {
+	max-width: 400px;
+	margin: 10px;
+}
