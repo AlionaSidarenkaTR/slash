@@ -1,1 +1,3 @@
 src/client/public
+src/client/app/*.js
+src/client/app/*.js.map
